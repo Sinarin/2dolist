@@ -1,0 +1,62 @@
+body {
+    margin: 0px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;  
+    height: 100vh;
+    width: 100vw;
+}
+
+.screen {
+        margin: 0px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;  
+    height: 100vh;
+    width: 100vw;
+}
+
+.nav {
+
+    background-color: aqua;
+    min-height: 4em ;
+    flex-grow: 2;
+    max-height: 3em;
+}
+
+.main {
+
+    background-color: rgb(137, 39, 64);
+    flex-grow: 2;
+    min-height: 4em;
+    display: flex;
+}
+.footer {
+    background-color: rgb(162, 162, 223);
+    min-height: 2em;
+    flex-grow: 2;
+    max-height: 6em;
+}
+
+.sidebar {
+    background-color: azure;
+    max-width: 10em;
+    flex: auto;
+}
+
+.content {
+    background-color: beige;
+    flex: auto;
+}
+
+.addProjectFormContainer {
+    border: 1px black;
+    background-color: brown;
+    position: absolute;
+    height: 20em;
+    width: 14em;
+    left: 50%;
+    top: 20%;
+}
