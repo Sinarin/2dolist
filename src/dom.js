@@ -56,6 +56,16 @@ const buttonAddProject = () => {
     button.addEventListener('click', () => projectDetailEntry.hidden = false);
 }
 
+const hideProjectScreenButton = () => {
+    const button = document.querySelector('.hideProject');
+    const projectDetailEntry = document.querySelector('.addProjectFormContainer');
+    button.addEventListener('click', () => projectDetailEntry.hidden = true)
+}
+
+const deleteProjectButton = (button) => {
+    const projectElement = button.parentNode;
+    button.addEventListener('click', () => projectElement.remove)
+}
 
 
 const toggleTaskInfo = () => {
