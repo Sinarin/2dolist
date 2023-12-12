@@ -1,4 +1,4 @@
-import { showProjectTasks, showAllProjects, buttonAddProject } from "./dom"
+import { showProjectTasks, showAllProjects, buttonAddProject, ActivateHideParentElementButton, ActivateProjectSubmitButton} from "./dom"
 
 const taskFactory = (title, description, dueDate, priority) => {
     return {
@@ -40,4 +40,5 @@ const todolistMock = {a: {one:{title: "asdf", description: 'adsf2', dueDate: "no
 showAllProjects(todolistMock);
 showProjectTasks(todolistMock.a);
 buttonAddProject();
-
+ActivateHideParentElementButton();
+ActivateProjectSubmitButton();

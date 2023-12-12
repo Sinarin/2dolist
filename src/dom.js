@@ -1,4 +1,4 @@
-export {showAllProjects, showProjectTasks, buttonAddProject};
+export {showAllProjects, showProjectTasks, buttonAddProject, ActivateHideParentElementButton, ActivateProjectSubmitButton};
 
 //takes a list of projects and creates DOM elements on the side back
 const showAllProjects = (todoList) => {
@@ -56,18 +56,39 @@ const buttonAddProject = () => {
     button.addEventListener('click', () => projectDetailEntry.hidden = false);
 }
 
-const hideProjectScreenButton = () => {
+const activateButtonHideAddProjectForm = () => {
     const button = document.querySelector('.hideProject');
     const projectDetailEntry = document.querySelector('.addProjectFormContainer');
     button.addEventListener('click', () => projectDetailEntry.hidden = true)
 }
 
-const deleteProjectButton = (button) => {
+const activateDeleteProjectButton = (button) => {
     const projectElement = button.parentNode;
     button.addEventListener('click', () => projectElement.remove)
 }
 
 
 const toggleTaskInfo = () => {
-        
+    
+}
+
+const ActivateHideParentElementButton = () => {
+    const button = document.querySelector('.exit');
+    const form = document.querySelector('.addProjectFormContainer')
+
+    button.addEventListener('click', () => form.hidden = true);
+}
+
+const ActivateProjectSubmitButton = () => {
+    const button = document.querySelector('#projectSubmit');
+    const proejectName = document.querySelector('#projectTitle');
+    button.addEventListener('click', () => {
+        if (proejectName.value){
+            AddProjectToSideBar()
+        }
+        else {
+            alert('Please Enter a Project Title Name');
+            return
+        }
+    })
 }
