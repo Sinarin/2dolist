@@ -41,4 +41,4 @@ showAllProjects(todolistMock);
 showProjectTasks(todolistMock.a);
 buttonAddProject();
 ActivateHideParentElementButton();
-ActivateProjectSubmitButton();
+ActivateProjectSubmitButton(todolistMock, projectFactory);

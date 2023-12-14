@@ -9,6 +9,8 @@ const showAllProjects = (todoList) => {
         }
         const projectTab = document.createElement('div');
         projectTab.textContent = projectName;
+        console.log(projectName);
+        projectTab.title = projectName;
         projectTab.addEventListener('click', () => changeProjectDisplayed(todoList[projectName]));
         sideBar.appendChild(projectTab);
     }
@@ -79,16 +81,30 @@ const ActivateHideParentElementButton = () => {
     button.addEventListener('click', () => form.hidden = true);
 }
 
-const ActivateProjectSubmitButton = () => {
+const ActivateProjectSubmitButton = (todolist, projectFactory) => {
     const button = document.querySelector('#projectSubmit');
-    const proejectName = document.querySelector('#projectTitle');
+    const projectName = document.querySelector('#projectTitle');
     button.addEventListener('click', () => {
-        if (proejectName.value){
+        if (projectName.value){
+            AddProjectToList(todolist, projectName.value, projectFactory)
+            showAllProjects(todolist)
             AddProjectToSideBar()
+            alert('asdfa')
+            console.log('adsfa')
         }
         else {
             alert('Please Enter a Project Title Name');
             return
         }
     })
+}
+
+const AddProjectToList = (todolist, projectName, projectFactory) => {
+    todolist[projectName] = projectFactory();
+}
+
+const AddProjectToSideBar = (project) => {
+    const sideBar = document.querySelector('.sidebar');
+
+
 }
